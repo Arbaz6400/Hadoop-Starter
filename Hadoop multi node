@@ -93,8 +93,8 @@ sudo sysctl vm.swappiness=1
 timedatectl status
 timedatectl list-timezones
 sudo timedatectl set-timezone Asia/Kolkata
-sudo ntpq -p
 sudo apt install ntp -y
+sudo ntpq -p
 
 ##Configure SSH Password less logins
 sudo su -c touch /home/hduser/.ssh/config; echo "Host *\n StrictHostKeyChecking no\n
