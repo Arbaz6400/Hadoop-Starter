@@ -114,6 +114,10 @@ $ sudo mkdir -p /var/www/html/cloudera-repos/cm6
 ----*** Download the Cloudera Manager Repo tarball ***----
 
 $ wget tarball
+********************Install aws cli********************
+$ sudo apt-get install awscli -y
+********************Copy files from bucket from S3 to Instance ********************
+$ aws s3 cp s3://<bucket name>/<copy tar file name by doing ls> ~
 
 $ sudo tar xvfz cm6.3.3-ubuntu1604.tar.gz -C /var/www/html/cloudera-repos/cm6 --strip-components=1
 
