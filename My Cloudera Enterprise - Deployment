@@ -182,6 +182,10 @@ $ cd
 
 sudo service cloudera-scm-server restart
 
+***********Use AMI to create 6 instances***********
+Create 3 Instance of 16gb RAM using t2.xlarge and Create 3 Instance of 8gb RAM using t2.large
+  
+
 ## Login to CM web UI on 7180
 
 Continue installation on WebUi
