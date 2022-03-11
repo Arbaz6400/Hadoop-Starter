@@ -189,8 +189,15 @@ Create 3 Instance of 16gb RAM using t2.xlarge and Create 3 Instance of 8gb RAM u
 ## Login to CM web UI on 7180
 
 Continue installation on WebUi
-
+IP page to input host IP:
+Go to Instance
+Uncheck the AWS experience and make it old
+search private IP in search
+it will show LL pvt ip, drag and copy to a notepad
 
 ## Run a test job
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar pi 10 100
+
+
+
