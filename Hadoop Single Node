@@ -16,7 +16,10 @@ sudo adduser hduser sudo
 sudo su hduser
 
 #Configure SSH 
-ssh-keygen cd .ssh cat id_rsa.pub >> authorized_keys ssh localhost
+ssh-keygen
+cd .ssh
+cat id_rsa.pub >> authorized_keys 
+ssh localhost
 
 #Download Hadoop 
 wget -c https://downloads.apache.org/hadoop/common/stable/hadoop-3.3.2.tar.gz
