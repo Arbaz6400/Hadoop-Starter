@@ -3,20 +3,32 @@ Hadoop-Starter
 To Start with Hadoop
 
 ##################################################### Hadoop 3 Single Node #####################################################
-
+Choose atleast T2 medium
 Install Java
-sudo apt-get update sudo apt install default-jdk -y java -version
+sudo apt-get update 
+sudo apt install default-jdk -y
+java -version
 
-#Create a Hadoop user for accessing HDFS and MapReduce sudo addgroup hadoop sudo adduser hduser --ingroup hadoop sudo adduser hduser sudo sudo su hduser
+#Create a Hadoop user for accessing HDFS and MapReduce 
+sudo addgroup hadoop
+sudo adduser hduser --ingroup hadoop 
+sudo adduser hduser sudo 
+sudo su hduser
 
-#Configure SSH ssh-keygen cd .ssh cat id_rsa.pub >> authorized_keys ssh localhost
+#Configure SSH 
+ssh-keygen cd .ssh cat id_rsa.pub >> authorized_keys ssh localhost
 
-#Download Hadoop wget -c https://downloads.apache.org/hadoop/common/stable/hadoop-3.3.2.tar.gz
+#Download Hadoop 
+wget -c https://downloads.apache.org/hadoop/common/stable/hadoop-3.3.2.tar.gz
 
-#Extract and Install Hadoop tar ball tar -xzvf hadoop-3.3.1.tar.gz sudo mv hadoop-3.3.1 /usr/local/hadoop sudo chown hduser:hadoop -R /usr/local/hadoop
+#Extract and Install Hadoop tar ball 
+tar -xzvf hadoop-3.3.1.tar.gz
+sudo mv hadoop-3.3.1 /usr/local/hadoop 
+sudo chown hduser:hadoop -R /usr/local/hadoop
 
 Set Enviornment Variable
-readlink -f $(which java) nano ~/.bashrc
+readlink -f $(which java)
+nano ~/.bashrc
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 export HADOOP_HOME=/usr/local/hadoop export PATH=$PATH:$HADOOP_HOME/bin export PATH=$PATH:$HADOOP_HOME/sbin export PATH=$PATH:/usr/local/hadoop/bin/ export HADOOP_MAPRED_HOME=$HADOOP_HOME export HADOOP_COMMON_HOME=$HADOOP_HOME export HADOOP_HDFS_HOME=$HADOOP_HOME export YARN_HOME=$HADOOP_HOME export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
 
@@ -24,17 +36,33 @@ source ~/.bashrc
 
 cd /usr/local/hadoop/etc/hadoop/
 
-#Update hadoop-env.sh nano hadoop-env.sh export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 export HADOOP_LOG_DIR=/var/log/hadoop sudo mkdir /var/log/hadoop sudo chown hduser:hadoop -R /var/log/hadoop
+#Update hadoop-env.sh nano hadoop-env.sh 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 export HADOOP_LOG_DIR=/var/log/hadoop 
+sudo mkdir /var/log/hadoop 
+sudo chown hduser:hadoop -R /var/log/hadoop
 
-#Update core-site.xml nano core-site.xml fs.defaultFS hdfs://localhost:54310
+#Update core-site.xml
+nano core-site.xml
+fs.defaultFS hdfs://localhost:54310
 
-#Update mapred-site.xml nano mapred-site.xml mapreduce.jobtracker.address localhost:54311 mapreduce.framework.name yarn yarn.app.mapreduce.am.env HADOOP_MAPRED_HOME=$HADOOP_MAPRED_HOME mapreduce.map.env HADOOP_MAPRED_HOME=$HADOOP_MAPRED_HOME mapreduce.reduce.env HADOOP_MAPRED_HOME=$HADOOP_MAPRED_HOME
+#Update mapred-site.xml
+nano mapred-site.xml
+mapreduce.jobtracker.address localhost:54311 mapreduce.framework.name yarn yarn.app.mapreduce.am.env HADOOP_MAPRED_HOME=$HADOOP_MAPRED_HOME mapreduce.map.env HADOOP_MAPRED_HOME=$HADOOP_MAPRED_HOME mapreduce.reduce.env HADOOP_MAPRED_HOME=$HADOOP_MAPRED_HOME
 
-#Update hdfs-site.xml sudo mkdir -p /usr/local/hadoop_store/hdfs/namenode sudo mkdir -p /usr/local/hadoop_store/hdfs/datanode sudo chown -R hduser:hadoop /usr/local/hadoop_store nano hdfs-site.xml dfs.replication 1 dfs.namenode.name.dir file:/usr/local/hadoop_store/hdfs/namenode dfs.datanode.data.dir file:/usr/local/hadoop_store/hdfs/datanode
+#Update hdfs-site.xml
+sudo mkdir -p /usr/local/hadoop_store/hdfs/namenode 
+sudo mkdir -p /usr/local/hadoop_store/hdfs/datanode
+sudo chown -R hduser:hadoop /usr/local/hadoop_store 
+nano hdfs-site.xml
+dfs.replication 1 dfs.namenode.name.dir file:/usr/local/hadoop_store/hdfs/namenode dfs.datanode.data.dir file:/usr/local/hadoop_store/hdfs/datanode
 
-#Update yarn-site.xml nano yarn-site.xml yarn.nodemanager.aux-services mapreduce_shuffle yarn.nodemanager.env-whitelist JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME
+#Update yarn-site.xml
+nano yarn-site.xml
+yarn.nodemanager.aux-services mapreduce_shuffle yarn.nodemanager.env-whitelist 
+JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME
 
-#Format Namenode hdfs namenode -format
+#Format Namenode 
+hdfs namenode -format
 
 start-dfs.sh start-yarn.sh
 
