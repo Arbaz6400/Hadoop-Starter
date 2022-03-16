@@ -11,7 +11,7 @@ sudo apt-get update sudo apt install default-jdk -y java -version
 
 #Configure SSH ssh-keygen cd .ssh cat id_rsa.pub >> authorized_keys ssh localhost
 
-#Download Hadoop wget -c https://downloads.apache.org/hadoop/common/stable/hadoop-3.3.1.tar.gz
+#Download Hadoop wget -c https://downloads.apache.org/hadoop/common/stable/hadoop-3.3.2.tar.gz
 
 #Extract and Install Hadoop tar ball tar -xzvf hadoop-3.3.1.tar.gz sudo mv hadoop-3.3.1 /usr/local/hadoop sudo chown hduser:hadoop -R /usr/local/hadoop
 
