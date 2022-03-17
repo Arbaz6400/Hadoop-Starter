@@ -3,7 +3,7 @@ Hadoop-Starter
 To Start with Hadoop
 
 ##################################################### Hadoop 3 Single Node #####################################################
-Choose atleast T2 medium
+Choose atleast T2 medium,  choose Ubuntu 16 not the SQL version
 Install Java
 sudo apt-get update 
 sudo apt install default-jdk -y
