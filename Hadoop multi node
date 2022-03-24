@@ -140,6 +140,7 @@ nano masters
 rm
 
 nano workers
+#localhost
 1dn
 2dn
 3dn
@@ -168,7 +169,7 @@ nano hdfs-site.xml
   </property> 
 
 
-#Create proper directories on datanode's
+#Create proper directories on datanode's(Do this from on NN from hduser)
 dsh -m 1dn,2dn,3dn mkdir -p /usr/local/hadoop/data/hdfs/datanode
  
 
