@@ -31,6 +31,8 @@ java -version
 
 # Download and Install Hadoop
 wget -c https://www-us.apache.org/dist/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
+or
+wget -c https://archive.apache.org/dist/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
 tar -xzvf hadoop-2.9.2.tar.gz
 sudo mv hadoop-2.9.2 /usr/local/hadoop
 sudo chown -R hduser:hadoop /usr/local/hadoop
