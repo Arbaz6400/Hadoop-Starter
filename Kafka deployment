@@ -34,6 +34,8 @@ chmod 600 mykeypair.pem
 
  eval `ssh-agent` ssh-add /home/ubuntu/.ssh/abc.pem
 
+ source .profile
+ 
 -----**** Set swappiness ****-----
 
  sudo sysctl vm.swappiness=0
