@@ -20,6 +20,13 @@ ubuntu 16
 -----**** Send key to DC ****-----
 
  scp -i abc.pem abc.pem ubuntu@oub-ip:~/.ssh/
+ 
+ ll
+ 
+change permissions
+
+chmod 600 mykeypair.pem
+
 
 -----**** Configure profile ****-----
 
