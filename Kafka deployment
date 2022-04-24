@@ -1,7 +1,9 @@
 #################################
 	Kafka Deployment
 #################################
-
+t2 medium
+ubuntu 16
+3 node cluster
 
 
 ## First we will setup Zookeeper Quorum
@@ -9,25 +11,25 @@
 
 -----**** Update and install necessary packages ****-----
 
-sudo apt-get update && sudo apt-get -y install ca-certificates zip net-tools netcat
+ sudo apt-get update && sudo apt-get -y install ca-certificates zip net-tools netcat
 
 -----**** Install java ****-----
 
-sudo apt-get install default-jdk -y
+ sudo apt-get install default-jdk -y
 
 -----**** Send key to DC ****-----
 
-scp -i abc.pem abc.pem ubuntu@oub-ip:~/.ssh/
+ scp -i abc.pem abc.pem ubuntu@oub-ip:~/.ssh/
 
 -----**** Configure profile ****-----
 
-nano .profile
+ nano .profile
 
-eval `ssh-agent` ssh-add /home/ubuntu/.ssh/abc.pem
+ eval `ssh-agent` ssh-add /home/ubuntu/.ssh/abc.pem
 
 -----**** Set swappiness ****-----
 
-sudo sysctl vm.swappiness=0
+ sudo sysctl vm.swappiness=0
 echo 'vm.swappiness=1' | sudo tee --append /etc/sysctl.conf
 
 -----**** Download zookeeper and kafka ****-----
