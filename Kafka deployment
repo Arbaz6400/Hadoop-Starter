@@ -242,7 +242,7 @@ echo "stat" | nc zk3 2181 ; echo
 
 
 ############### Kafka Deployment ##################
-
+Volume size 10gb
 
 -----**** Creating and attaching volumes ****-----
 
