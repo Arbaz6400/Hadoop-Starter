@@ -22,15 +22,19 @@ All traffic     private-subnet-cidr/24
 All traffic     default-sec-group-id
 All traffic     private-subnet-cidr/24
 
-
+After VPC created there will be 2 default security group, Make sure the default and the New sec group works on same VPC.
 -----*** Launch public nodes ***-----
+for cm node Take t3 large
 
+Choose my vpc while launching
+Choose pub subnet
+choose auto ip enable
 
 -----*** Update the server ***-----
-$ sudo apt-get update && sudo apt-get dist-upgrade -y
+sudo apt-get update && sudo apt-get dist-upgrade -y
 
 -----*** Disable transparent huge pages ***-----
-$ sudo nano /etc/rc.local
+ sudo nano /etc/rc.local
 ## Add these lines:
 
 if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
@@ -47,10 +51,10 @@ $source /etc/rc.local
 
 -----*** Install NTP ***-----
 
-$ sudo apt-get install ntp -y 
-$ sudo service ntp status
+ sudo apt-get install ntp -y 
+ sudo service ntp status
 ## If it isn't running 
-$ sudo service ntp start 
+ sudo service ntp start 
 
 
 -----*** Set Swappiness ***-----
