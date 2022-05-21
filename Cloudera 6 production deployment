@@ -77,12 +77,12 @@ $ sudo tune2fs -l /dev/nvme0n1p1 | egrep "Block count|Reserved block count"
 check “No reboot”
 
 
------*** Launch cluster nodes ***----
+-----*** Launch cluster nodes( Cab be done after cm confrigured) ***----
 
-Launch reamining instances in private subnet
+Launch reamining instances in private subnet, launch 3x T3 large and 3x T3 xl
+choose my vpc and pvt subnet, Select second security group for these instances
 
-Select second security group for these instances
-
+For Edge node, choose Pub subnet, My vpc, default SG.
 
 ##### Preparing external database for cloudera #####
 
