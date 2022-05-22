@@ -29,7 +29,7 @@ for cm node Take t3 large
 Choose my vpc while launching
 Choose pub subnet
 choose auto ip enable
-
+choose def SG
 -----*** Update the server ***-----
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
