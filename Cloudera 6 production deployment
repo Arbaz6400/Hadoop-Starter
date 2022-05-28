@@ -382,11 +382,18 @@ mysql> grant all on hue.* to 'hue'@'ip-10-0-0-100.ec2.internal' identified by 'p
 
 ##### Install Mysql jdbc jar on hosts where services are running #####
 
+Send the Key to CM to connect to other Instances by command:
+
+scp -i multi.pem multi.pem ubuntu@public_dns:~
+ connect to oozie, run below 
+ 
 sudo apt-get install libmysql-java
 
 sudo cp /usr/share/java/mysql-connector-java-5.1.28.jar /opt/cloudera/parcels/CDH/lib/oozie/lib/
 
-
+Go to edge and rman pvt dns and install driver:
+sudo apt-get install libmysql-java
+**Note library to be pasted only on oozie
 ##### On database host
 
 sudo su
@@ -399,6 +406,13 @@ bind-address=(private-ip-of-cms)
 
 ## Now continue installation on CM web ui
 
+choose user name and database as set in previous steps
+
+Replace the PVT DNS with CM PVT DNS
+
+
+-----***  ***-----
+-----***  ***-----
 
 
 -----*** Set up Edge node ***-----
