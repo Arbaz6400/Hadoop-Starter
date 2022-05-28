@@ -391,7 +391,7 @@ sudo apt-get install libmysql-java
 
 sudo cp /usr/share/java/mysql-connector-java-5.1.28.jar /opt/cloudera/parcels/CDH/lib/oozie/lib/
 
-Go to edge and rman pvt dns and install driver:
+Go to edge, hive and rman pvt dns and install driver:
 sudo apt-get install libmysql-java
 **Note library to be pasted only on oozie
 ##### On database host
