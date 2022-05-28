@@ -421,7 +421,8 @@ Replace the PVT DNS with CM PVT DNS
 Add gateway roles on CM node
 
 test whether read and write is working
-
+sudo nano /etc/passwd
+find hdfs and relace the sbin with bin/bash
 ## Run a test job
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar pi 10 100 
