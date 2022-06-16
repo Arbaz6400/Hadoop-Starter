@@ -85,6 +85,7 @@ $ sudo mkdir -p /var/www/html/cloudera-repos/cm5
 ----*** Download the Cloudera Manager Repo tarball ***----
 
 $ wget tarball
+$ aws s3 cp <S3 URL> ~ --region <Region(us-east-1) >
 
 $ sudo tar xvfz cm5.13.3-ubuntu14-04.tar.gz -C /var/www/html/cloudera-repos/cm5 --strip-components=1
 
