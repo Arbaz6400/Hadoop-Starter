@@ -153,6 +153,7 @@ sudo service cloudera-scm-server restart
 
 Continue installation on WebUi
 
+Choose custom repo and put the pvt ip 
 
 ---** Set Java home location for all hosts **---
 
